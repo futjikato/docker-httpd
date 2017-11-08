@@ -2,7 +2,7 @@ FROM httpd:alpine
 
 # Tools to change the uid on run
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories && \
-    apk add --no-cache shadow
+    apk add --no-cache shadow su-exec
 COPY entrypoint-chuid /usr/local/bin
 
 # Install modular httpd.conf
