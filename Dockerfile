@@ -1,5 +1,8 @@
 FROM httpd:alpine
 
+# Install timezone change utils
+RUN apk add --no-cache tzdata
+
 # Tools to change the uid on run
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories && \
     apk add --no-cache shadow su-exec
